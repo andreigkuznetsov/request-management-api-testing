@@ -2159,7 +2159,7 @@ class RequestApiTest {
 
     @Test
     void userShouldNotBeAbleToChangeRequestStatus() {
-        Integer requestId =
+        Long requestId =
                 given()
                         .baseUri(BASE_URL)
                         .auth().oauth2(USER_TOKEN)
@@ -2235,7 +2235,7 @@ class RequestApiTest {
 #### Переменные
 
 ```java
-Integer requestId;
+Long requestId;
 String BASE_URL;
 String USER_TOKEN;
 ```
@@ -2540,7 +2540,7 @@ Idempotency-Key: same-key-123
 
 # 28. Интеграционные риски и дополнительные проверки
 
-В исходном ТЗ напрямую не описаны Redis, очереди, cron, webhooks, импорт, поиск или S3. Но с учётом вакансии и типичных backend/e-commerce задач я бы рассматривал эти зоны как потенциальные риски, если заявка участвует в более широком бизнес-процессе.
+В исходном ТЗ напрямую не описаны Redis, очереди, cron, webhooks, импорт, поиск или S3. Но с учётом типичных backend/e-commerce задач я бы рассматривал эти зоны как потенциальные риски, если заявка участвует в более широком бизнес-процессе.
 
 Важно: эти проверки не являются обязательными по исходному ТЗ, но показывают, как я бы расширял тестирование при наличии соответствующих интеграций.
 
